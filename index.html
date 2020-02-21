@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classlist of Hogwarts 1991</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <img class="logo" src="imgs/Hogwarts_logo.png" alt="Hogwarts Logo" />
+    </header>
+
+    <main>
+      <article class="description">
+        <h1>Classlist</h1>
+        <p>The full name of the student, and the house selected by the sorting hat. There are four different houses: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin.</p>
+      </article>
+
+      <label id="theme-changer">
+        Choose theme
+        <select name="theme" id="theme">
+          <option value="gryffindor">Gryffindor theme</option>
+          <option value="hufflepuff">Hufflepuff theme</option>
+          <option value="ravenclaw">Ravenclaw theme</option>
+          <option value="slytherin">Slytherin theme</option>
+        </select>
+      </label>
+
+      <section id="data_container"></section>
+    </main>
+
+    <div id="popup">
+      <!-- popup vindue til visning af hvert enkelt student (single-wiew) -->
+      <section class="content">
+        <button class="luk">X</button>
+        <!-- luk-knap til popvinduet-->
+        <article class="single_student">
+          <!-- popup vinduets indhold indlæses dynamisk heri-->
+          <img src="" alt="" />
+          <h1 class="single_name"></h1>
+          <h2 class="single_house"></h2>
+
+          <p class="fav_course"></p>
+          <p class="spell"></p>
+          <p class="house_teacher"></p>
+        </article>
+      </section>
+    </div>
+
+    <template>
+      <!-- template til visning af dynamisk indhold på siden, templaten er skjult indtil at man ved hjælp af jS henter indhold i den -->
+      <article class="student">
+        <h2 class="name"></h2>
+        <h3 class="house"></h3>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

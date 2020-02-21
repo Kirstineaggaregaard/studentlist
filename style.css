@@ -1,0 +1,202 @@
+:root {
+  /* Vi definerer de farver vi vil bruge som variabler, så vi hurtigt kan ændre farverne ét sted */
+  --main-color: #3c3c3c;
+  --third-color: white;
+  --gold: #ebb100;
+  --orange: #f2b705;
+  --popup-bg: #ffffff;
+  --popup-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--main-color);
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+#data_container {
+  display: grid;
+  padding: 10px;
+  grid-gap: 10px;
+  width: 100vw;
+}
+
+/************ TYPOGRAFI ************/
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  color: var(--third-color);
+}
+
+h2 {
+  font-size: 2.2rem;
+  color: var(--main-color);
+  margin: 10px 0 5px 0;
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: var(--main-color);
+  margin: 0 0 5px 0;
+}
+
+p {
+  font-size: 1.6rem;
+  color: var(--third-color);
+}
+
+/************ HEADER ************/
+header {
+  display: grid;
+  width: 100vw;
+}
+
+.logo {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/************ THEME *************/
+
+[data-theme="gryffindor"] {
+  --popup-bg: #660000;
+  --popup-color: #e09d09;
+}
+
+[data-theme="hufflepuff"] {
+  --popup-bg: black;
+  --popup-color: #ff9d0a;
+}
+
+[data-theme="ravenclaw"] {
+  --popup-bg: #193956;
+  --popup-color: #654321;
+}
+
+[data-theme="slytherin"] {
+  --popup-bg: #2e751c;
+  --popup-color: silver;
+}
+
+/************* MAIN *************/
+
+.description {
+  margin: 30px;
+  text-align: center;
+}
+
+.description h1 {
+  margin-bottom: 0px;
+}
+
+/******** TEMPLATE *********/
+.student {
+  height: 250px;
+  padding: 20px;
+  background-color: var(--gold);
+  border-radius: 8px;
+  border: 10px solid var(--main-color);
+  border-style: double;
+  cursor: pointer;
+}
+
+.name {
+  font-size: 2rem;
+  color: var(--main-color);
+  margin: 15px 10px 10px 0;
+}
+
+.house {
+  font-size: 1.6rem;
+  color: var(--main-color);
+  margin: 15px 10px 10px 0;
+}
+
+/******** POPUP *********/
+#popup {
+  /* Den div der fylder hele vinduet */
+  position: fixed;
+  top: 0;
+
+  /* Div'en fylder hele bredden og højden af vinduet */
+  width: 100vw;
+  height: 100vh;
+
+  /* Div'en er hvid, og har en opacity på 0.75 */
+  background-color: rgba(255, 255, 255, 0.75);
+
+  /* Popup vinduet er som udgangspunkt skjult, men får display: flex; når den åbnes */
+  display: none;
+
+  /* Centrerer .indhold vandret */
+  justify-content: center;
+
+  /* Centrerer .indhold lodret */
+  align-items: center;
+
+  z-index: 130;
+}
+
+.content {
+  /* Det er her vores single view indhold bliver vist */
+  width: 80vw;
+  max-width: 600px;
+  max-height: 80vh;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--popup-bg);
+  color: var(--popup-color);
+
+  /* Gør at man kan scrolle i vinduet, hvis der ikke er plads til indholdet */
+  overflow: scroll;
+  z-index: 140;
+}
+
+.single_student img {
+  height: 400px;
+  float: right;
+}
+
+.single_student h1 {
+  font-size: 3rem;
+  color: var(--popup-color);
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+
+.single_student h2 {
+  font-size: 2rem;
+  color: var(--popup-color);
+  text-align: left;
+  margin: 0 0 5px 0;
+}
+
+.single_student p {
+  font-size: 1.6rem;
+  color: var(--popup-color);
+}
+
+.luk {
+  float: right;
+  font-size: 2.5rem;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--popup-color);
+}
+
+.luk:hover {
+  border: none;
+  outline: none;
+  color: var(--orange);
+}
