@@ -18,15 +18,29 @@
         <p>The full name of the student, and the house selected by the sorting hat. There are four different houses: Gryffindor, Hufflepuff, Ravenclaw, and Slytherin.</p>
       </article>
 
-      <label id="theme-changer">
-        Choose theme
-        <select name="theme" id="theme">
-          <option value="gryffindor">Gryffindor theme</option>
-          <option value="hufflepuff">Hufflepuff theme</option>
-          <option value="ravenclaw">Ravenclaw theme</option>
-          <option value="slytherin">Slytherin theme</option>
-        </select>
-      </label>
+      <p id="filtering">
+        Filter:
+        <button class="filter valgt" data-action="filter" data-filter="all">All Houses</button>
+        <button class="filter" data-action="filter" data-filter="Gryffindor">Gryffindor</button>
+        <button class="filter" data-action="filter" data-filter="Hufflepuff">Hufflepuff</button>
+        <button class="filter" data-action="filter" data-filter="Ravenclaw">Ravenclaw</button>
+        <button class="filter" data-action="filter" data-filter="Slytherin">Slytherin</button>
+
+        <button class="filter" data-action="filter" data-filter="expelled">Expelled</button>
+      </p>
+
+      <p id="sorting">
+        Sort:
+        <button class="sort" data-action="sort" data-sort-direction="asc" data-sort="firstName">Firstname</button>
+        <button class="sort" data-action="sort" data-sort-direction="asc" data-sort="lastName">Lastname</button>
+        <button class="sort" data-action="sort" data-sort-direction="asc" data-sort="house">House</button>
+        <button class="sort" data-action="sort" data-sort-direction="asc" data-sort="gender">Gender</button>
+        <!-- <button class="sort" data-action="sort" data-sort-direction="asc" data-sort="winner">Prefects</button> -->
+        <!-- ⭐🎖 -->
+      </p>
+
+      <input id="search" type="text" placeholder="Search:" />
+      <button class="hack">ENTER</button>
 
       <section id="data_container"></section>
     </main>
@@ -34,17 +48,19 @@
     <div id="popup">
       <!-- popup vindue til visning af hvert enkelt student (single-wiew) -->
       <section class="content">
-        <button class="luk">X</button>
+        <button class="close">X</button>
         <!-- luk-knap til popvinduet-->
         <article class="single_student">
           <!-- popup vinduets indhold indlæses dynamisk heri-->
-          <img src="" alt="" />
+          <div class="crest"></div>
           <h1 class="single_name"></h1>
           <h2 class="single_house"></h2>
+          <h2 class="single_gender"></h2>
+          <h2 class="single_blood"></h2>
+          <h2 class="single_prefect"></h2>
+          <h2 class="single_squad"></h2>
 
-          <p class="fav_course"></p>
-          <p class="spell"></p>
-          <p class="house_teacher"></p>
+          <img class="student_photo" src="" alt="" />
         </article>
       </section>
     </div>
@@ -54,6 +70,11 @@
       <article class="student">
         <h2 class="name"></h2>
         <h3 class="house"></h3>
+        <td data-field="expelled" class="expell_button">
+          <button>Expel Student</button>
+        </td>
+        <button data-field="winner" class="prefect_button">Make student a prefect 🏆</button>
+        <button data-field="star" class="squad_button">Make student a part of inquisitorial squad: 🎖</button>
       </article>
     </template>
 

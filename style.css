@@ -67,24 +67,63 @@ header {
 
 /************ THEME *************/
 
-[data-theme="gryffindor"] {
+.crest {
+  width: 100px;
+  height: 100px;
+  background-image: var(--house-crest);
+  background-size: 100%;
+}
+
+[data-theme="Gryffindor"] {
   --popup-bg: #660000;
   --popup-color: #e09d09;
+  --house-crest: url(imgs/gryffindor-emblem.png);
 }
 
-[data-theme="hufflepuff"] {
+[data-theme="Hufflepuff"] {
   --popup-bg: black;
   --popup-color: #ff9d0a;
+  --house-crest: url(imgs/hufflepuff-emblem.png);
 }
 
-[data-theme="ravenclaw"] {
+[data-theme="Ravenclaw"] {
   --popup-bg: #193956;
   --popup-color: #654321;
+  --house-crest: url(imgs/ravenclaw-emblem.png);
 }
 
-[data-theme="slytherin"] {
+[data-theme="Slytherin"] {
   --popup-bg: #2e751c;
   --popup-color: silver;
+  --house-crest: url(imgs/slytherin-emblem.png);
+}
+
+/************* BUTTONS *************/
+
+.valgt {
+  background-color: var(--orange);
+  border-radius: 0.5rem;
+}
+
+/****** WINNER ******/
+[data-field="winner"][data-winner="false"] {
+  filter: grayscale(100%);
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+/* ****** STAR ****** */
+
+[data-field="star"] {
+  text-align: center;
+  cursor: pointer;
+  min-width: 2em;
+}
+
+[data-star="false"] {
+  filter: grayscale(100%);
+  cursor: pointer;
+  border-radius: 0.5rem;
 }
 
 /************* MAIN *************/
@@ -98,9 +137,31 @@ header {
   margin-bottom: 0px;
 }
 
+#filtering {
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+.filter {
+  margin-right: 5px;
+}
+
+#sorting {
+  margin-left: 20px;
+  margin-right: 5px;
+}
+
+.sort {
+  margin-right: 5px;
+}
+
+input {
+  margin-left: 20px;
+}
+
 /******** TEMPLATE *********/
 .student {
-  height: 250px;
+  height: 150px;
   padding: 20px;
   background-color: var(--gold);
   border-radius: 8px;
@@ -150,7 +211,7 @@ header {
   /* Det er her vores single view indhold bliver vist */
   width: 80vw;
   max-width: 600px;
-  max-height: 80vh;
+  max-height: 150vh;
   padding: 20px;
   border-radius: 10px;
   background-color: var(--popup-bg);
@@ -161,8 +222,8 @@ header {
   z-index: 140;
 }
 
-.single_student img {
-  height: 400px;
+.student_photo {
+  width: 100px;
   float: right;
 }
 
@@ -185,7 +246,7 @@ header {
   color: var(--popup-color);
 }
 
-.luk {
+.close {
   float: right;
   font-size: 2.5rem;
   border: none;
@@ -195,7 +256,7 @@ header {
   color: var(--popup-color);
 }
 
-.luk:hover {
+.close:hover {
   border: none;
   outline: none;
   color: var(--orange);
