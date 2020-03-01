@@ -321,7 +321,7 @@ function expellStudent(student) {
 // SELECT PREFECT
 
 function selectPrefect(clickedStudent) {
-  // create array of winners
+  // create array of winners/prefects
 
   const winners = allOfStudent.filter(student => {
     return student.winner === true;
@@ -345,6 +345,8 @@ function selectPrefect(clickedStudent) {
 
   displayList(filteredArray);
 }
+
+// SELECT INQUISITORIAL SQUAD
 
 function selectSquad(clickedStudent) {
   console.log(clickedStudent.star);
